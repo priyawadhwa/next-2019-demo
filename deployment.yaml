@@ -17,7 +17,7 @@ spec:
       containers:
       - name: hello
         imagePullPolicy: Always
-        image: gcr.io/priya-wadhwa/hello
+        image: gcr.io/next19/hello
         ports:
         - containerPort: 8080
 ---
