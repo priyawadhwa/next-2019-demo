@@ -2,8 +2,8 @@ apiVersion: skaffold/v1beta6
 kind: Config
 build:
   artifacts:
-  - image: gcr.io/next19/hello
+    - image: gcr.io/next19/hello
 deploy:
   kubectl:
     manifests:
-    - deployment.yaml
+      - deployment.yaml
