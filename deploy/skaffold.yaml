@@ -1,0 +1,8 @@
+apiVersion: skaffold/v1beta7
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/next19/skaffold
+    docker:
+      dockerfile: Dockerfile_skaffold
+  googleCloudBuild: {}
