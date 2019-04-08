@@ -24,13 +24,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-service
+  name: frontend-service
   labels:
-    app: hello
+    app: frontend
 spec:
   type: LoadBalancer
   selector:
-    app: hello
+    app: frontend
   ports:
   - port: 8080
     targetPort: 8080

@@ -88,11 +88,9 @@ export default {
         this.nine = this.currentLetter
       }
 
-      console.log(cell);
       this.tracking[cell] = this.currentPlayer
       this.currentPlayer = !this.currentPlayer
       this.trackingLetter[cell] = this.currentLetter
-      console.log("tracking letter", cell, this.trackingLetter[cell])
       if (this.currentPlayer) {
         this.currentLetter = "X"
       } else {
@@ -143,7 +141,7 @@ export default {
       }
 
       if(2 in this.tracking && 5 in this.tracking && 8 in this.tracking) {
-        if (this.tracking[2] && this.tracking[4] && this.tracking[8]) {
+        if (this.tracking[2] && this.tracking[5] && this.tracking[8]) {
           return "X"
         }
         if (!this.tracking[2] && !this.tracking[5] && !this.tracking[8]) {
@@ -152,7 +150,7 @@ export default {
       }
 
       if(3 in this.tracking && 6 in this.tracking && 9 in this.tracking) {
-        if (this.tracking[3] && this.tracking[4] && this.tracking[9]) {
+        if (this.tracking[3] && this.tracking[6] && this.tracking[9]) {
           return "X"
         }
         if (!this.tracking[3] && !this.tracking[6] && !this.tracking[9]) {
@@ -161,7 +159,7 @@ export default {
       }
 
       if(1 in this.tracking && 5 in this.tracking && 9 in this.tracking) {
-        if (this.tracking[1] && this.tracking[4] && this.tracking[9]) {
+        if (this.tracking[1] && this.tracking[5] && this.tracking[9]) {
           return "X"
         }
         if (!this.tracking[1] && !this.tracking[5] && !this.tracking[9]) {
@@ -170,7 +168,7 @@ export default {
       }
 
       if(3 in this.tracking && 5 in this.tracking && 7 in this.tracking) {
-        if (this.tracking[3] && this.tracking[4] && this.tracking[7]) {
+        if (this.tracking[3] && this.tracking[5] && this.tracking[7]) {
           return "X"
         }
         if (!this.tracking[3] && !this.tracking[5] && !this.tracking[7]) {
@@ -220,5 +218,6 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     text-align: center;
+    font-size: 100px;
 }
 </style>

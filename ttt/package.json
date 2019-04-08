@@ -1,6 +1,6 @@
 {
-  "name": "gameoflife",
-  "description": "GCP Next Demo",
+  "name": "tictactoe",
+  "description": "Tic Tac Toe",
   "version": "1.0.0",
   "author": "",
   "license": "Apache 2",
