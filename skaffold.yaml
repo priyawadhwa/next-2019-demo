@@ -23,3 +23,13 @@ profiles:
       kubectl:
         manifests:
           - k8s/colors.yaml
+  - name: frontend 
+    build:
+      artifacts:
+      - image: gcr.io/next19/ttt
+        docker:
+          dockerfile: ./ttt/Dockerfile
+    deploy:
+      kubectl:
+        manifests:
+          - k8s/frontend.yaml

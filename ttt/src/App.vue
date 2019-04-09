@@ -16,7 +16,7 @@
       <div v-on:click="selected(9)" v-bind:style="{ color: colors[9]}" id="9" class="cell"> {{ nine }}</div>
     </div>
 
-    <h1 v-if="winningPlayer!=''"> Winning player is {{ winningPlayer }}  </h1>
+    <div class="winner" v-if="winningPlayer!=''"> Winning player is {{ winningPlayer }}  </div>
   </div>
   
 </template>
@@ -240,4 +240,14 @@ h1 {
     text-align: center;
     font-size: 100px;
 }
+
+.winner {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  bottom: 2%;
+  left: 40%;
+  height: 100px;
+}
+
 </style>
