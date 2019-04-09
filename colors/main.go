@@ -8,7 +8,7 @@ import (
 
 func main() {
 	log.Print("Listening...")
-	http.HandleFunc("/", colors)
+	http.HandleFunc("/colors", colors)
 	http.ListenAndServe(":8888", nil)
 }
 
@@ -22,10 +22,13 @@ type Colors struct {
 }
 
 func colors(w http.ResponseWriter, r *http.Request) {
+	log.Print("got something")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	resp := &Response{
 		Colors: Colors{
-			X: "black",
-			O: "black",
+			X: "green",
+			O: "red",
 		},
 	}
 	contents, err := json.Marshal(resp)

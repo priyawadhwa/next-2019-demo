@@ -3,17 +3,17 @@
     <h1> Tic Tac Toe! </h1>
 
     <div class="board">
-      <div v-on:click="selected(1)" id="1" class="cell"> {{ one }} </div>
-      <div v-on:click="selected(2)" id="2" class="cell"> {{ two }} </div>
-      <div v-on:click="selected(3)" id="3" class="cell"> {{ three }} </div>
+      <div v-on:click="selected(1)" v-bind:style="{ color: colors[1]}" id="1" class="cell"> {{ one }} </div>
+      <div v-on:click="selected(2)" v-bind:style="{ color: colors[2]}" id="2" class="cell"> {{ two }} </div>
+      <div v-on:click="selected(3)" v-bind:style="{ color: colors[3]}" id="3" class="cell"> {{ three }} </div>
 
-      <div v-on:click="selected(4)" id="4" class="cell"> {{ four }}</div>
-      <div v-on:click="selected(5)" id="5" class="cell"> {{ five }}</div>
-      <div v-on:click="selected(6)" id="6" class="cell"> {{ six }}</div>
+      <div v-on:click="selected(4)" v-bind:style="{ color: colors[4]}" id="4" class="cell"> {{ four }}</div>
+      <div v-on:click="selected(5)" v-bind:style="{ color: colors[5]}" id="5" class="cell"> {{ five }}</div>
+      <div v-on:click="selected(6)" v-bind:style="{ color: colors[6]}" id="6" class="cell"> {{ six }}</div>
 
-      <div v-on:click="selected(7)" id="7" class="cell"> {{ seven }} </div>
-      <div v-on:click="selected(8)" id="8" class="cell"> {{ eight }} </div>
-      <div v-on:click="selected(9)" id="9" class="cell"> {{ nine }}</div>
+      <div v-on:click="selected(7)" v-bind:style="{ color: colors[7]}" id="7" class="cell"> {{ seven }} </div>
+      <div v-on:click="selected(8)" v-bind:style="{ color: colors[8]}" id="8" class="cell"> {{ eight }} </div>
+      <div v-on:click="selected(9)" v-bind:style="{ color: colors[9]}" id="9" class="cell"> {{ nine }}</div>
     </div>
 
     <h1 v-if="winningPlayer!=''"> Winning player is {{ winningPlayer }}  </h1>
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+
+const axios = require("axios");
 
 export default {
   name: "app",
@@ -44,12 +46,26 @@ export default {
       six: "",
       seven: "",
       eight: "",
-      nine: ""
+      nine: "",
+      colors: {},
+      xColor: "black",
+      oColor: "black",
+      activeColor: "black",
     }
   },
   destroyed() {
   },
   mounted() {
+    axios
+      .get('http://35.236.82.179:8888/colors')
+      .then(response => {
+        console.log(response.data)
+        this.oColor = response.data.colors.o
+        this.xColor = response.data.colors.x
+      }).catch(error => {
+      console.log(error)
+      })
+    this.activeColor = this.oColor
   },
   methods: {
     selected: function(cell) {
@@ -93,8 +109,12 @@ export default {
       this.trackingLetter[cell] = this.currentLetter
       if (this.currentPlayer) {
         this.currentLetter = "X"
+        this.colors[cell] = this.xColor
+        this.activeColor = this.xColor
       } else {
         this.currentLetter = "O"
+        this.colors[cell] = this.oColor
+        this.activeColor = this.oColor
       }
 
       let winner = this.winner()
