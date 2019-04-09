@@ -12,3 +12,14 @@ deploy:
   kubectl:
     manifests:
       - k8s/**.yaml
+profiles:
+  - name: color 
+    build:
+      artifacts:
+        - image: gcr.io/next19/colors
+          docker:
+            dockerfile: ./colors/Dockerfile
+    deploy:
+      kubectl:
+        manifests:
+          - k8s/colors.yaml
