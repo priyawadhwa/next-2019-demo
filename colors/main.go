@@ -27,8 +27,8 @@ func colors(w http.ResponseWriter, r *http.Request) {
 
 	resp := &Response{
 		Colors: Colors{
-			X: "black",
-			O: "black",
+			X: "purple",
+			O: "blue",
 		},
 	}
 	contents, err := json.Marshal(resp)
