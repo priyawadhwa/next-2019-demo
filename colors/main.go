@@ -22,13 +22,12 @@ type Colors struct {
 }
 
 func colors(w http.ResponseWriter, r *http.Request) {
-	log.Print("got something")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	resp := &Response{
 		Colors: Colors{
-			X: "black",
-			O: "black",
+			X: "purple",
+			O: "yellow",
 		},
 	}
 	contents, err := json.Marshal(resp)
