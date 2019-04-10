@@ -238,7 +238,7 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    font-size: 100px;
+    font-size: 130px;
 }
 
 #a {
