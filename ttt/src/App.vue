@@ -3,17 +3,17 @@
     <h1> Tic Tac Toe! </h1>
 
     <div class="board">
-      <div v-on:click="selected(1)" v-bind:style="{ color: colors[1]}" id="1" class="cell"> {{ one }} </div>
-      <div v-on:click="selected(2)" v-bind:style="{ color: colors[2]}" id="2" class="cell"> {{ two }} </div>
-      <div v-on:click="selected(3)" v-bind:style="{ color: colors[3]}" id="3" class="cell"> {{ three }} </div>
+      <div v-on:click="selected(1)" v-bind:style="{ color: colors[1]}" id="a" class="cell"> {{ one }} </div>
+      <div v-on:click="selected(2)" v-bind:style="{ color: colors[2]}" id="b" class="cell"> {{ two }} </div>
+      <div v-on:click="selected(3)" v-bind:style="{ color: colors[3]}" id="c" class="cell"> {{ three }} </div>
 
-      <div v-on:click="selected(4)" v-bind:style="{ color: colors[4]}" id="4" class="cell"> {{ four }}</div>
-      <div v-on:click="selected(5)" v-bind:style="{ color: colors[5]}" id="5" class="cell"> {{ five }}</div>
-      <div v-on:click="selected(6)" v-bind:style="{ color: colors[6]}" id="6" class="cell"> {{ six }}</div>
+      <div v-on:click="selected(4)" v-bind:style="{ color: colors[4]}" id="d" class="cell"> {{ four }}</div>
+      <div v-on:click="selected(5)" v-bind:style="{ color: colors[5]}" id="e" class="cell"> {{ five }}</div>
+      <div v-on:click="selected(6)" v-bind:style="{ color: colors[6]}" id="f" class="cell"> {{ six }}</div>
 
-      <div v-on:click="selected(7)" v-bind:style="{ color: colors[7]}" id="7" class="cell"> {{ seven }} </div>
-      <div v-on:click="selected(8)" v-bind:style="{ color: colors[8]}" id="8" class="cell"> {{ eight }} </div>
-      <div v-on:click="selected(9)" v-bind:style="{ color: colors[9]}" id="9" class="cell"> {{ nine }}</div>
+      <div v-on:click="selected(7)" v-bind:style="{ color: colors[7]}" id="g" class="cell"> {{ seven }} </div>
+      <div v-on:click="selected(8)" v-bind:style="{ color: colors[8]}" id="h" class="cell"> {{ eight }} </div>
+      <div v-on:click="selected(9)" v-bind:style="{ color: colors[9]}" id="i" class="cell"> {{ nine }}</div>
     </div>
 
     <div class="winner" v-if="winningPlayer!=''"> Winning player is {{ winningPlayer }}  </div>
@@ -220,7 +220,7 @@ h1 {
 }
 
 .board {
-    border: 2px solid #333333;
+    border-top: 2px solid #333333;
     margin: auto;
     width: 60%;
     height: 60%;
@@ -230,15 +230,45 @@ h1 {
 
 .cell {
     position: relative;
+    padding:0;
     float: left;
-    width: 33%;
+    width: calc(100%  /3);
     height: 200px;
     border: 2px solid #333333;
-    padding-top: 12px;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
     font-size: 100px;
+}
+
+#a {
+  border-left: 4px solid #333333;
+}
+
+#c {
+  border-right: 4px solid #333333;
+}
+
+#d {
+  border-left: 4px solid #333333;
+}
+
+#f {
+  border-right: 4px solid #333333;
+}
+
+#g {
+  border-left: 4px solid #333333;
+  border-bottom: 4px solid #333333;
+}
+
+#h {
+  border-bottom: 4px solid #333333;
+}
+
+#i {
+  border-right: 4px solid #333333;
+  border-bottom: 4px solid #333333;
 }
 
 .winner {
