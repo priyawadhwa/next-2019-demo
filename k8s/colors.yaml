@@ -17,7 +17,7 @@ spec:
       containers:
       - name: colors
         imagePullPolicy: Always
-        image: gcr.io/next19/colors
+        image: gcr.io/priya-wadhwa/colors
         ports:
         - containerPort: 8888
 ---
