@@ -17,7 +17,7 @@ spec:
       containers:
       - name: frontend
         imagePullPolicy: Always
-        image: gcr.io/next19/ttt
+        image: gcr.io/priya-wadhwa/ttt
         ports:
         - containerPort: 8080
 ---

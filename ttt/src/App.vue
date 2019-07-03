@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://35.236.82.179:8888/colors')
+      .get('http://34.68.225.115:8888/colors')
       .then(response => {
         console.log(response.data)
         this.oColor = response.data.colors.o
