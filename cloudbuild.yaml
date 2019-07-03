@@ -1,6 +1,6 @@
 steps:
   - name: "gcr.io/cloud-builders/gcloud-slim"
-    args: ["container", "clusters", "get-credentials", "demo",
-           "--zone", "us-west2-a", "--project", "next19"]
-  - name: "gcr.io/next19/skaffold"
+    args: ["container", "clusters", "get-credentials", "kritis",
+           "--zone", "us-central1-a", "--project", "priya-wadhwa"]
+  - name: "gcr.io/priya-wadhwa/skaffold"
     args: ["skaffold", "run"]
