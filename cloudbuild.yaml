@@ -3,4 +3,4 @@ steps:
     args: ["container", "clusters", "get-credentials", "kritis",
            "--zone", "us-central1-a", "--project", "priya-wadhwa"]
   - name: "gcr.io/priya-wadhwa/skaffold"
-    args: ["skaffold", "run"]
+    args: ["skaffold", "run", "-p", "color"]
