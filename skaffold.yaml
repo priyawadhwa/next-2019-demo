@@ -2,10 +2,10 @@ apiVersion: skaffold/v1beta6
 kind: Config
 build:
   artifacts:
-    - image: gcr.io/priya-wadhwa/colors
+    - image: gcr.io/next19/colors
       docker:
         dockerfile: ./colors/Dockerfile
-    - image: gcr.io/priya-wadhwa/ttt
+    - image: gcr.io/next19/ttt
       docker:
         dockerfile: ./ttt/Dockerfile
 deploy:
@@ -16,7 +16,7 @@ profiles:
   - name: color 
     build:
       artifacts:
-        - image: gcr.io/priya-wadhwa/colors
+        - image: gcr.io/next19/colors
           docker:
             dockerfile: ./colors/Dockerfile
     deploy:
@@ -26,7 +26,7 @@ profiles:
   - name: frontend 
     build:
       artifacts:
-      - image: gcr.io/priya-wadhwa/ttt
+      - image: gcr.io/next19/ttt
         docker:
           dockerfile: ./ttt/Dockerfile
     deploy:
